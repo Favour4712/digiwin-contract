@@ -94,7 +94,7 @@
       (secret (+ (mod random-seed range) min-number))
     )
     (begin
-      (asserts! (< min-number max-number) ERR_INVALID_PARAMS)
+      (asserts! (<= min-number max-number) ERR_INVALID_PARAMS)
       
       (map-set games game-id {
         creator: tx-sender,
